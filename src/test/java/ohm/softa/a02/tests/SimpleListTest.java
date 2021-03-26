@@ -9,8 +9,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * @author Peter Kurfer
- * Created on 10/6/17.
+ * 2) Check the given test suite for an example on
+ *    ...how to use an anonymous class with an interface: testFilterAnonymousClass()
+ *    ...how an anonymous class can be replaced by a lambda expression: testFilterLambda()
+ *
+ * 3) Add some test methods and implement another filter logic
+ *    (e.g. every third number, or any number smaller than a certain value).
  */
 public class SimpleListTest {
 
@@ -62,7 +66,16 @@ public class SimpleListTest {
 		SimpleListImpl result = (SimpleListImpl) testList.filter(o -> ((int)o) % 2 == 0);
 		for(Object o : result){
 			int i = (int)o;
-			assertTrue(i % 2 == 0);
+			assertTrue(i % 2 == 0); // ODER: assertEquals(0, i % 2);
+		}
+	}
+
+	@Test
+	void testFilterSmallerFour(){
+		SimpleListImpl result = (SimpleListImpl) testList.filter(o -> ((int)o) < 4);
+		for(Object o : result){
+			int i = (int)o;
+			assertTrue(i < 4);
 		}
 	}
 }

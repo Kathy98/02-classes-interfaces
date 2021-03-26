@@ -104,12 +104,6 @@ public class SimpleListImpl implements SimpleList, Iterable<Object> {
      */
     public SimpleList filter(SimpleFilter filter) {
         SimpleList newList = new SimpleListImpl();
-        // Falsch: WIE GEHT'S RICHTIG???
-        // for(int i=0; i<this.length; i++) {
-        //     if(filter.include(this[i])){
-        //         newList.add(this[i]);
-        //     }
-        // }
         for(Object o : this){
             if(filter.include(o)){
                 newList.add(o);
