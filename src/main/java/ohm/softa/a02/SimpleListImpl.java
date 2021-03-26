@@ -55,7 +55,9 @@ public class SimpleListImpl implements SimpleList, Iterable<Object> {
 
         @Override
         public Object next() {
-            return null;
+            Object tmp = current.getItem();
+            current = current.getNext();
+            return tmp;
         }
     }
 
